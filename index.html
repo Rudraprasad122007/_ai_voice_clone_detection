@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Voice Clone Detection</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>🎙️ AI Voice Clone Detection</h1>
+        <p>Analyze voice recordings using multiple detection tests</p>
+    </header>
+
+
+    <main>
+
+        <!-- Upload Voice -->
+        <section class="upload-section">
+
+            <h2>Upload Voice Sample</h2>
+
+            <label for="audioFile" class="upload-box">
+
+                <div class="upload-icon">🎤</div>
+
+                <h3>Upload Voice</h3>
+
+                <p>Click here to select an audio file</p>
+
+                <small>Supported formats: WAV, MP3, M4A</small>
+
+            </label>
+
+            <input type="file" id="audioFile" accept="audio/*">
+
+            <p id="fileName">No file selected</p>
+
+            <button class="analyze-btn" onclick="runAllTests()">
+                🔍 Analyze Voice
+            </button>
+
+        </section>
+
+
+        <!-- Test Cases -->
+
+        <h2 class="section-title">Voice Analysis Tests</h2>
+
+
+        <section class="test-container">
+
+
+            <!-- Test 1 -->
+            <div class="test-card">
+
+                <div class="test-number">TEST 01</div>
+
+                <h2>🤖 AI Clone Detection</h2>
+
+                <p>
+                    Detect whether the voice is AI-generated
+                    or a real human voice.
+                </p>
+
+                <div class="result" id="aiResult">
+                    Waiting for analysis...
+                </div>
+
+                <div class="confidence">
+                    Confidence:
+                    <span id="aiConfidence">0%</span>
+                </div>
+
+            </div>
+
+
+            <!-- Test 2 -->
+            <div class="test-card">
+
+                <div class="test-number">TEST 02</div>
+
+                <h2>🧬 Speaker Embedding</h2>
+
+                <p>
+                    Compare the speaker characteristics
+                    with the reference voice.
+                </p>
+
+                <div class="result" id="speakerResult">
+                    Waiting for analysis...
+                </div>
+
+                <div class="confidence">
+                    Similarity:
+                    <span id="speakerConfidence">0%</span>
+                </div>
+
+            </div>
+
+
+            <!-- Test 3 -->
+            <div class="test-card">
+
+                <div class="test-number">TEST 03</div>
+
+                <h2>🎙️ Recorded Voice Detection</h2>
+
+                <p>
+                    Analyze whether the uploaded audio
+                    is a recorded voice sample.
+                </p>
+
+                <div class="result" id="recordResult">
+                    Waiting for analysis...
+                </div>
+
+                <div class="confidence">
+                    Confidence:
+                    <span id="recordConfidence">0%</span>
+                </div>
+
+            </div>
+
+
+            <!-- Test 4 -->
+            <div class="test-card">
+
+                <div class="test-number">TEST 04</div>
+
+                <h2>🔐 Voice Authenticity</h2>
+
+                <p>
+                    Check the audio for characteristics
+                    associated with manipulated or synthetic voice.
+                </p>
+
+                <div class="result" id="authResult">
+                    Waiting for analysis...
+                </div>
+
+                <div class="confidence">
+                    Confidence:
+                    <span id="authConfidence">0%</span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Overall Result -->
+
+        <section class="overall-section">
+
+            <h2>📊 Overall Analysis</h2>
+
+            <div id="overallResult">
+                Upload a voice sample and click Analyze Voice.
+            </div>
+
+            <div class="overall-score">
+
+                <h3>Overall Confidence</h3>
+
+                <div class="progress">
+                    <div id="overallProgress"></div>
+                </div>
+
+                <p id="overallConfidence">0%</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- Statistics -->
+
+        <section class="statistics">
+
+            <div class="stat-card">
+                <h3>Total Tests</h3>
+                <p id="totalTests">0</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Fraud Detected</h3>
+                <p id="aiDetected">0</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Authentic</h3>
+                <p id="authenticDetected">0</p>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>AI Voice Clone Detection Project</p>
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
